@@ -3,5 +3,9 @@ Rails.application.routes.draw do
     resources :orders, only: [:index, :create]
   end
 
-  resources :orders, only: [:update, :destroy, :show]
+  resources :orders, only: [:update, :destroy, :show] do
+    resources :items, only: [:index, :create]
+  end
+
+  resources :items, only: [:update, :destroy, :show]
 end
