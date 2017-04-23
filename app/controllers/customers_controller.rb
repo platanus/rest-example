@@ -2,7 +2,7 @@ class CustomersController < ApplicationController
   before_action :set_customer, only: [:show, :update, :destroy]
 
   def index
-    @customers = Customer.all
+    @customers = paged(Customer.all)
 
     render json: @customers
   end
