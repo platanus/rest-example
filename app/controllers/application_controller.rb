@@ -1,17 +1,8 @@
 class ApplicationController < ActionController::API
-  def paged(collection)
-    if params.has_key?(:page)
-      page_number = params[:page][:number].to_i
-      page_size = params[:page][:size].to_i
-      total = collection.count
-      results_to = page_number * page_size
-      results_from = results_to - page_size
-      results_to = total if results_to > total
-      response.headers["Content-Range"] = "items #{results_from}-#{results_to}/#{total}"
+  include ApiErrorConcern if Rails.env.production?
+  include Paged
 
-      return collection.page(page_number).per(page_size)
-    end
+  self.responder = ApiResponder
 
-    collection.all
-  end
+  respond_to :json
 end

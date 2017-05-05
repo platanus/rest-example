@@ -14,8 +14,9 @@ gem 'puma', '~> 3.0'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'active_model_serializers', '~> 0.10.0'
 gem 'enumerize'
-gem 'kaminari'
 gem 'faker'
+gem 'kaminari'
+gem 'responders'
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 3.0'
 # Use ActiveModel has_secure_password

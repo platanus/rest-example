@@ -1,33 +1,25 @@
-class ItemsController < ApplicationController
+class Api::V1::ItemsController < ApplicationController
   before_action :set_order, only: [:index, :create]
   before_action :set_item, only: [:show, :update, :destroy]
 
   def index
     @items = @order.items
 
-    render json: @items
+    respond_with @items
   end
 
   def show
-    render json: @item
+    respond_with @item
   end
 
   def create
-    @item = @order.items.build(item_params)
-
-    if @item.save
-      render json: @item, status: :created, location: @item
-    else
-      render json: @item.errors, status: :unprocessable_entity
-    end
+    @item = @order.items.create(item_params)
+    respond_with @item
   end
 
   def update
-    if @item.update(item_params)
-      render json: @item
-    else
-      render json: @item.errors, status: :unprocessable_entity
-    end
+    @item.update(item_params)
+    respond_with @item
   end
 
   def destroy
