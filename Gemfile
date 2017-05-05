@@ -16,7 +16,9 @@ gem 'active_model_serializers', '~> 0.10.0'
 gem 'enumerize'
 gem 'faker'
 gem 'kaminari'
+gem 'pry-rails'
 gem 'responders'
+gem 'versionist'
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 3.0'
 # Use ActiveModel has_secure_password
