@@ -3,7 +3,7 @@ class Api::V1::CustomersController < Api::V1::BaseController
   deprecate :create, :update, :destroy
 
   def index
-    @customers = paged(Customer.all)
+    @customers = paged(filtered(Customer.all))
     respond_with @customers
   end
 

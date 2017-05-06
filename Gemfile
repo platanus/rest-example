@@ -16,7 +16,7 @@ gem 'active_model_serializers', '~> 0.10.0'
 gem 'enumerize'
 gem 'faker'
 gem 'kaminari'
-gem 'pry-rails'
+gem 'ransack'
 gem 'responders'
 gem 'versionist'
 # Use Redis adapter to run Action Cable in production
@@ -32,7 +32,7 @@ gem 'versionist'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
-  gem 'byebug', platform: :mri
+  gem 'pry-rails'
 end
 
 group :development do
