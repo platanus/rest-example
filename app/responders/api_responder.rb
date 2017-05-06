@@ -10,6 +10,7 @@ class ApiResponder < ActionController::Responder
 
   def display(resource, given_options = {})
     options[:json] = resource
+    options[:fields] = controller.params[:fields].to_hash if controller.params[:fields]
     controller.render(options.merge(given_options))
   end
 
