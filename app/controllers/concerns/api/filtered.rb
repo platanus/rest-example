@@ -1,6 +1,7 @@
-module Filtered
+module Api::Filtered
   extend ActiveSupport::Concern
 
+  # EXAMPLE: ?filter=name::Jermaine%20Robel|email::bruce_prosacco@casperrunolfsdottir.com
   def filtered(collection)
     filters = parse_filters
     return collection unless filters

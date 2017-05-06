@@ -1,4 +1,4 @@
-module Deprecated
+module Api::Deprecated
   extend ActiveSupport::Concern
 
   module ClassMethods

@@ -1,9 +1,9 @@
 class ApplicationController < ActionController::API
-  include ApiErrorConcern if Rails.env.production?
-  include Paged
-  include Versioned
-  include Deprecated
-  include Filtered
+  include Api::ErrorConcern if Rails.env.production?
+  include Api::Paged
+  include Api::Versioned
+  include Api::Deprecated
+  include Api::Filtered
 
   self.responder = ApiResponder
 

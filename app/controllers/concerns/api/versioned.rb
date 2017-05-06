@@ -1,4 +1,4 @@
-module Versioned
+module Api::Versioned
   extend ActiveSupport::Concern
 
   included do

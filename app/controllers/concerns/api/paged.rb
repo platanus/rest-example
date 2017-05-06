@@ -1,4 +1,4 @@
-module Paged
+module Api::Paged
   extend ActiveSupport::Concern
 
   def paged(collection)

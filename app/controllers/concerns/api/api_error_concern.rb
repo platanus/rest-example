@@ -1,4 +1,4 @@
-module ApiErrorConcern
+module Api::ErrorConcern
   extend ActiveSupport::Concern
 
   included do
