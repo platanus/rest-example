@@ -1,4 +1,4 @@
-class OrderSerializer < ActiveModel::Serializer
+class V1::OrderSerializer < ActiveModel::Serializer
   attributes :id, :status
 
   link(:self) { order_url(object.id) }

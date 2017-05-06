@@ -1,7 +1,10 @@
 class V2::CustomerSerializer < ActiveModel::Serializer
-  attributes :identifier, :name, :email
+  attributes :identifier, :name
 
   def identifier
-    Digest::SHA256.hexdigest(object.id.to_s)
+    object.email
   end
+
+  link(:self) { customer_url(object.id) }
+  link(:orders) { customer_orders_url(object) }
 end

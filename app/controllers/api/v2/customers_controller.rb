@@ -1,13 +1,13 @@
-class Api::V2::CustomersController < ApplicationController
+class Api::V2::CustomersController < Api::V2::BaseController
   before_action :set_customer, only: [:show]
 
   def index
     @customers = paged(Customer.all)
-    respond_with @customers, each_serializer: ::V2::CustomerSerializer
+    respond_with @customers
   end
 
   def show
-    respond_with @customer, serializer: ::V2::CustomerSerializer
+    respond_with @customer
   end
 
   private

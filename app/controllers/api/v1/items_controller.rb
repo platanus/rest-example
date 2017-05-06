@@ -1,4 +1,4 @@
-class Api::V1::ItemsController < ApplicationController
+class Api::V1::ItemsController < Api::V1::BaseController
   before_action :set_order, only: [:index, :create]
   before_action :set_item, only: [:show, :update, :destroy]
   deprecate :index, :show, :create, :update, :destroy

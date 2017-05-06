@@ -1,4 +1,4 @@
-class Api::V1::OrdersController < ApplicationController
+class Api::V1::OrdersController < Api::V1::BaseController
   before_action :set_customer, only: [:index, :create]
   before_action :set_order, only: [:show, :update, :destroy]
   deprecate :index, :show, :create, :update, :destroy
