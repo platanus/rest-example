@@ -1,5 +1,6 @@
 class Api::V1::CustomersController < ApplicationController
   before_action :set_customer, only: [:show, :update, :destroy]
+  deprecate :create, :update, :destroy
 
   def index
     @customers = paged(Customer.all)

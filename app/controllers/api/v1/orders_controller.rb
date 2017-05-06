@@ -1,6 +1,7 @@
 class Api::V1::OrdersController < ApplicationController
   before_action :set_customer, only: [:index, :create]
   before_action :set_order, only: [:show, :update, :destroy]
+  deprecate :index, :show, :create, :update, :destroy
 
   def index
     @orders = @customer.orders

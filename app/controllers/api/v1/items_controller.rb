@@ -1,6 +1,7 @@
 class Api::V1::ItemsController < ApplicationController
   before_action :set_order, only: [:index, :create]
   before_action :set_item, only: [:show, :update, :destroy]
+  deprecate :index, :show, :create, :update, :destroy
 
   def index
     @items = @order.items
