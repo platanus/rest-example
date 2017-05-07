@@ -3,7 +3,7 @@ class ApplicationController < ActionController::API
   include Api::Paged
   include Api::Versioned
   include Api::Deprecated
-  include Api::Filtered
+  include Api::Search
 
   self.responder = ApiResponder
 
