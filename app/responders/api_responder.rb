@@ -3,7 +3,7 @@ class ApiResponder < ActionController::Responder
     return display_errors if has_errors?
     return head(:no_content) if delete?
 
-    display(resource, status_code: status_code)
+    display(resource, status: status_code)
   end
 
   private
@@ -20,10 +20,14 @@ class ApiResponder < ActionController::Responder
   end
 
   def display_errors
-    controller.render(
-      status: :unprocessable_entity,
-      json: { msg: "invalid_attributes", errors: format_errors }
-    )
+    error = {
+      code: 400,
+      status: "error",
+      message: "invalid_attributes",
+      data: resource.errors.as_json
+    }
+
+    controller.render(status: :bad_request, json: error)
   end
 
   def format_errors

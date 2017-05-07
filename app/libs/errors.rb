@@ -1,0 +1,2 @@
+class ApiVersionError < RuntimeError
+end

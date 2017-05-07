@@ -1,5 +1,5 @@
 class ApplicationController < ActionController::API
-  include Api::ErrorConcern if Rails.env.production?
+  include Api::Error
   include Api::Paged
   include Api::Versioned
   include Api::Deprecated
